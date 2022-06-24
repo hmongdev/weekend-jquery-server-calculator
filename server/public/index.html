@@ -11,8 +11,28 @@
     <body>
         <header>
             <h1>Weekend jQuery Server Calculator</h1>
+            <form action="">
+                <input
+                    id="firstNumber"
+                    type="number"
+                    placeholder="First Number"
+                />
+                <button id="add">+</button>
+                <button id="subtract">-</button>
+                <button id="multiply">*</button>
+                <button id="divide">/</button>
+                <input
+                    id="secondNumber"
+                    type="number"
+                    placeholder="Second Number"
+                />
+                <button id="equal">=</button>
+                <button id="clear">C</button>
+            </form>
         </header>
-        <main></main>
-        <footer></footer>
+        <main>
+            <h1 id="calculatedAnswer"></h1>
+            <ul id="calculations"></ul>
+        </main>
     </body>
 </html>
