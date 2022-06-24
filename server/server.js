@@ -9,9 +9,9 @@ const port = 5000;
 app.use(express.static('server/public'));
 
 //middlware
-app.use(bodyParser.urlencoded({ extended: true });
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // Start up our server
 app.listen(port, () => {
-  console.log('listening on port', port);
+    console.log('listening on port', port);
 });
