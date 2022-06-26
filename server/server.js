@@ -22,58 +22,55 @@ app.get('/home', function (req, res) {
 
 // POST response
 app.post('/home', (req, res) => {
-    console.log('POST /home', req.body);
-    calcArray.push(req.body);
+    // console.log(`req.body:`, req.body);
+
+    //access obj
+    let obj = req.body;
+    console.log(`obj is:`, obj);
+
+    //declare variables
+    let num1 = Number(obj.num1);
+    // console.log(`num1:`, num1);
+    let operator = obj.operator;
+    // console.log(`operator:`, operator);
+    let num2 = Number(obj.num2);
+    // console.log(`num2:`, num2);
+
+    //LOGIC for calculations
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+        default:
+            console.log(`ERROR`);
+    }
+    //create new math object WITH answer
+    let newObj = {
+        //cannot use $ / jquery in server.js
+        num1: Number(num1),
+        operator: operator,
+        num2: Number(num2),
+        answer: Number(result),
+    };
+    //push obj to array
+    calcArray.push(newObj);
     //check to make sure object is inside
     console.log(calcArray);
     // CREATED
     res.sendStatus(201);
 });
 
-//handle all the operations
-function handleOperations(calcArray) {
-    //loop through calcArray
-    for (let i = 0; i < calcArray.length; i++) {
-        //grab the last numbers
-        console.log(calcArray[i]);
-    }
-
-    // //do shit with it
-    // if ($(this).data('id') === 'add') {
-    //     add(num1, num2);
-    // }
-    // if ($(this).data('id') === 'subtract') {
-    //     subtract(num1, num2);
-    // }
-    // if ($(this).data('id') === 'multiply') {
-    //     multiply(num1, num2);
-    // }
-    // if ($(this).data('id') === 'divide') {
-    //     divide(num1, num2);
-    // }
-}
-
-//add
-function add(num1, num2) {
-    return num1 + num2;
-}
-
-//subtract
-function subtract(num1, num2) {
-    return (num1 -= num2);
-}
-
-//multiply
-function multiply(num1, num2) {
-    return num1 * num2;
-}
-
-//divide
-function divide(num1, num2) {
-    return num1 / num2;
-}
-
 // Start up our server
 app.listen(port, () => {
     console.log('listening on port', port);
 });
+
