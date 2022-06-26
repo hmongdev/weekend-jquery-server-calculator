@@ -27,11 +27,11 @@ What problem did you solve? How did you solve it?
 
 1. Creating server logic to calculate the inputs. I first approached this by creating 4 separate if statements, then 4 functions. In the end, I solved this issue by creating a switch statement. Then storing the result of the calcuation in a new object that would be returned to the client upon a GET request.
 
-2. 
+2.
 
 ## Screen Shot
 
-
+![Screenshot](Screen Shot 2022-06-26 at 5.54.25 PM.png)
 
 ### Prerequisites
 
@@ -42,31 +42,26 @@ Link to software that is required to install the app (e.g. node).
 
 ## Installation
 
-How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
+How do you get your application up and running?
 
-If your application has secret keys (for example -- Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the `.env` file.
-
-1. Create a database named `your database name`,
-2. The queries in the `tables.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
-3. Open up your editor of choice and run an `npm install`
-4. Run `npm run server` in your terminal
-5. Run `npm run client` in your terminal
-6. The `npm run client` command will open up a new browser tab for you!
+1. Git the SSH url and 'git clone' into your folder
+2. In your VScode terminal, 'npm start'
+3. In your browser, go to localhost:5000
 
 ## Usage
 
 How does someone use this application? Tell a user story here.
 
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
+1. Put in user inputs
+2. Click on operator button
+3. Click on equal button to submit your calculation
+4. Your calculations will appear on the screen!
 
 ## Built With
 
-List technologies and frameworks here
+Node.js
+Express.js
+jQuery
 
 ## License
 
