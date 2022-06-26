@@ -75,22 +75,15 @@ function getResults() {
 }
 
 //display to DOM
-function render(array) {
+function render(response) {
     //empty DOM
     $('ul').empty();
 
-    //declare last array element
-    let lastItem = array.length - 1;
-
-    //append answer
-    $('#answer').text(`${array[lastItem].answer}`);
-
     //loop and append to DOM
-    for (let i of array) {
+    for (let i of response) {
+        let li = `<li>${i.num1} ${i.operator} ${i.num2} = ${i.answer}</li>`;
         // include the i.answer
         // don't use 'main' for targeting the append element => returns undefined
-        $('ul').append(
-            `<li>${i.num1} ${i.operator} ${i.num2} = ${i.answer}</li>`
-        );
+        $('ul').append(li);
     }
 }
