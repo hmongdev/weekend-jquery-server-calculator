@@ -41,7 +41,7 @@ function grabInputs() {
             getResults();
 
             //display to DOM
-            renderResults(response);
+            render(response);
 
             //clear input fields
             clearInputs();
@@ -65,7 +65,7 @@ function getResults() {
     }) //if sucessful, then...
         .then(function (array) {
             // display to DOM
-            renderResults(array);
+            render(array);
         })
         .catch(function (err) {
             //404, 500, etc
@@ -75,7 +75,7 @@ function getResults() {
 }
 
 //display to DOM
-function renderResults(array) {
+function render(array) {
     //empty DOM
     $('ul').empty();
 
