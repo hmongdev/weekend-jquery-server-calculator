@@ -11,9 +11,25 @@ weekend-jquery-server-calculator.js
 
 ## Description
 
-_Duration: 2 Week Sprint_
+_Duration: 8 hours_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it?
+Description:
+In this project, we learned how to:
+1. Create a user interface
+2. Grab user input
+3. Select the type of mathematical operation the user wants
+4. Click a submit button that captures the user inputs, bundles it in an object, and sends the object to the server using POST method
+5. Server logic should perform calculations and store the new result
+6. Then use a GET method to retrieve the data from the server and display a history of the results on the DOM
+
+What problem did you solve? 
+
+1. Creating server logic to calculate the inputs. I first approached this by creating 4 separate if statements, then 4 functions. In the end, I solved this issue by creating a switch statement.
+
+2. 
+
+
+How did you solve it?
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
 

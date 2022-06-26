@@ -3,7 +3,6 @@ $(ready);
 
 //ready function
 function ready() {
-    console.log(`I'm ready!`);
     //clear inputs
     $('#clear').on('click', clearInputs);
     //grab input
@@ -75,7 +74,7 @@ function renderResults(array) {
     //declare last array element
     let lastItem = array.length - 1;
 
-    //append result
+    //append answer
     $('#answer').text(`${array[lastItem].answer}`);
 
     //loop and append
