@@ -15,6 +15,7 @@ _Duration: 8 hours_
 
 Description:
 In this project, we learned how to:
+
 1. Create a user interface
 2. Grab user input
 3. Select the type of mathematical operation the user wants
@@ -22,24 +23,15 @@ In this project, we learned how to:
 5. Server logic should perform calculations and store the new result
 6. Then use a GET method to retrieve the data from the server and display a history of the results on the DOM
 
-What problem did you solve? 
+What problem did you solve? How did you solve it?
 
-1. Creating server logic to calculate the inputs. I first approached this by creating 4 separate if statements, then 4 functions. In the end, I solved this issue by creating a switch statement.
+1. Creating server logic to calculate the inputs. I first approached this by creating 4 separate if statements, then 4 functions. In the end, I solved this issue by creating a switch statement. Then storing the result of the calcuation in a new object that would be returned to the client upon a GET request.
 
 2. 
 
-
-How did you solve it?
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
-
-Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
-
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
-
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
+
 
 ### Prerequisites
 

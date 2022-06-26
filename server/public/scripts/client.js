@@ -3,6 +3,7 @@ $(ready);
 
 //ready function
 function ready() {
+    $(document).on('load', getResults);
     //clear inputs
     $('#clear').on('click', clearInputs);
     //grab input
@@ -14,7 +15,9 @@ function ready() {
 let operator;
 // adding operator
 function addOperator() {
+    //grab button's text
     operator = $(this).text();
+    //return operator so we get its value
     return operator;
 }
 
@@ -25,8 +28,8 @@ function grabInputs() {
         operator: operator,
         num2: Number($('#num2').val()),
     };
-    console.log(currentObj);
-    // POST request to server
+
+    // POST => sending currentObj to server.js
     $.ajax({
         url: '/home',
         method: 'POST',
@@ -34,8 +37,14 @@ function grabInputs() {
     })
         .then(function (response) {
             console.log(response);
+            //create currentCalc object
             getResults();
+
+            //display to DOM
             renderResults(response);
+
+            //clear input fields
+            clearInputs();
         })
         .catch(function (error) {
             console.log(`ERROR in /POST request`);
@@ -49,14 +58,13 @@ function clearInputs() {
 
 //GET request to server
 function getResults() {
-    // AJAX
+    // GET => retrieve newObj
     $.ajax({
         url: '/home',
         method: 'GET',
-    })
+    }) //if sucessful, then...
         .then(function (array) {
-            console.log(array);
-            // displayNumbers to DOM
+            // display to DOM
             renderResults(array);
         })
         .catch(function (err) {
@@ -77,7 +85,7 @@ function renderResults(array) {
     //append answer
     $('#answer').text(`${array[lastItem].answer}`);
 
-    //loop and append
+    //loop and append to DOM
     for (let i of array) {
         // include the i.answer
         // don't use 'main' for targeting the append element => returns undefined
