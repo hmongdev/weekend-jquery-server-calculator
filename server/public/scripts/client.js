@@ -73,7 +73,7 @@ function renderResults(array) {
     $('ul').empty();
 
     //declare last array element
-    let lastItem = array.length - 1
+    let lastItem = array.length - 1;
 
     //append result
     $('#answer').text(`${array[lastItem].answer}`);
@@ -81,6 +81,7 @@ function renderResults(array) {
     //loop and append
     for (let i of array) {
         // include the i.answer
+        // don't use 'main' for targeting the append element => returns undefined
         $('ul').append(
             `<li>${i.num1} ${i.operator} ${i.num2} = ${i.answer}</li>`
         );
