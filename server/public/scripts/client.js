@@ -3,6 +3,7 @@ $(ready);
 
 //ready function
 function ready() {
+    //on reload => getResults
     $(document).on('load', getResults);
     //clear inputs
     $('#clear').on('click', clearInputs);
