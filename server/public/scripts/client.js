@@ -4,7 +4,7 @@ $(ready);
 //ready function
 function ready() {
     //on reload => getResults
-    $(document).on('load', getResults);
+    getResults();
     //clear inputs
     $('#clear').on('click', clearInputs);
     //grab input
@@ -69,11 +69,12 @@ function getResults() {
         url: '/home',
         method: 'GET',
     }) //if sucessful, then...
-        .then(function (array) {
+        .then((response) => {
+            console.log(`Received a response from server!`);
             // display to DOM
-            render(array);
+            render(response);
         })
-        .catch(function (err) {
+        .catch((err) => {
             //404, 500, etc
             console.log(err);
             alert('ERROR IN GET /home');
@@ -82,14 +83,18 @@ function getResults() {
 
 //display to DOM
 function render(response) {
-    //empty DOM
-    $('ul').empty();
+    if (response.length === 0) {
+        console.log(`Nothing in the array yet!`);
+    } else {
+        //empty DOM
+        $('ul').empty();
 
-    //loop and append to DOM
-    for (let i of response) {
-        // include the i.answer
-        let li = `<li>${i.num1} ${i.operator} ${i.num2} = ${i.answer}</li>`;
-        // don't use 'main' for targeting the append element => returns undefined
-        $('ul').append(li);
+        //loop and append to DOM
+        for (let i of response) {
+            // include the i.answer
+            let li = `<li>${i.num1} ${i.operator} ${i.num2} = ${i.answer}</li>`;
+            // don't use 'main' for targeting the append element => returns undefined
+            $('ul').append(li);
+        }
     }
 }
