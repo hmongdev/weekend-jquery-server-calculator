@@ -81,8 +81,8 @@ function render(response) {
 
     //loop and append to DOM
     for (let i of response) {
-        let li = `<li>${i.num1} ${i.operator} ${i.num2} = ${i.answer}</li>`;
         // include the i.answer
+        let li = `<li>${i.num1} ${i.operator} ${i.num2} = ${i.answer}</li>`;
         // don't use 'main' for targeting the append element => returns undefined
         $('ul').append(li);
     }
