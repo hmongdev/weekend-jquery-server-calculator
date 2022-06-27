@@ -30,6 +30,11 @@ function grabInputs() {
         num2: Number($('#num2').val()),
     };
 
+    //stretch goal
+    if (num1 === '' || num2 === '' || operator === '') {
+        alert('We did a stretch goal!');
+    }
+
     // POST => sending currentObj to server.js
     $.ajax({
         url: '/home',
