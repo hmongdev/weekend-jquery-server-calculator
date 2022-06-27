@@ -31,7 +31,7 @@ function grabInputs() {
     };
 
     //stretch goal
-    if (num1 === '' || num2 === '' || operator === '') {
+    if (!num1 || !num2 || !operator) {
         alert('We did a stretch goal!');
     }
 
